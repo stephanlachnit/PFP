@@ -1,0 +1,168 @@
+\section{Grundlagen}
+\subsection{Bildmodalitäten}
+In der medizinischen Bildgebung gibt es verschiedene Bildgebungstechniken,
+welche je nach Technik unterschiedliche Informationen besser darstellen.
+Besonders wichtig sind die Magnetresonanztomographie (MRT) und
+Computertomographie (CT) zur Diagnostizierung, welche wir im folgenden genauer
+betrachten wollen.
+
+\subsubsection{MRT-Bildgebung}
+Für die Magnetresonanztomographie sind der Spin, der Drehimpuls und das
+magnetisches Moment des Protons grundlegend. Wenn ein Magnetfeld angelegt wird,
+können durch diese Eigenschaften die Lage der Rotationsachse des Protons, der
+induzierte Magnetfeldvektor sowie dessen Änderungen beobachtet werden.\\
+Die Ausrichtung der Spins wird mit der Larmorfrequenz $\omega_0$ beschrieben.
+Diese ist die Frequenz, welche die Präzessionsbewegung eines Protons in einem
+äußeren Magnetfeld $B_0$ beschreibt: $\omega_0 = \gamma_0 \cdot B_0$, wobei
+$\gamma_0$ das gyromagnetische Verhältnis beschreibt.\\
+Mit einer elektromagnetischen Welle mit Larmorfrequenz kann dem System Energie
+hinzugefügt werden. Da in einem äußeren Magnetfeld in $z$-Richtung fast alle
+Spins parallel in $z$-Richtung ausgerichtet sind, kippen diese durch solch eine
+Anregung aus der $z$-Achse. Das MR-Signal, auf welchem die MRT-Bildgebung
+beruht, entsteht durch einen \ang{90}-Puls. Dabei kippen die Spins in die
+$x$-$y$-Ebene und induzieren eine Wechselspannung mit der Larmorfrequenz in der
+Empfangsspule.\\
+Da der Ausgangszustand (parallele Ausrichtung in $z$-Richtung) stabiler ist,
+fallen die Spins in diesen mit der Zeit zurück. Dies geschieht durch die
+Spin-Gitter- und die Spin-Spin-Wechselwirkung oder auch T1- beziehungsweise
+T2-Relaxation genannt.\\
+Die T1-Relaxation wird auch longitudinale Relaxation genannt, da durch die
+Ausrichtung der Spins entlang des Magnetfeldes die longitudinale Magnetisierung
+zunimmt. Die zugehörige Zeitkonstante T1 ist abhängig von der Magnetfeldstärke
+und vom Material.  Die Spin-Spin Wechselwirkung mit der zugehörigen
+Zeitkonstante T2 trägt ebenso zur Abnahme der transversalen Magnetisierung bei.
+Hierbei entsteht eine Dephasierung des Spins durch einen Energieaustausch der
+Spins untereinander.  Auch Inhomogenitäten des Magnetfeldes verstärken den
+Zerfall der Phasenkohärenz. Diese entstehen einerseits durch das Gerät
+andererseits durch den Patienten im Magnetfeld. Mit Hilfe von spezielle
+Sequenzen kann dieser Effekt unterdrückt werden.\\
+Die Anzahl anregbarer Spins pro Volumeneinheit, die T1-Zeit (Zeit bis sich die
+Spins nach einer Anregung wieder entlang des Magnetfeldes ausgerichtet sind)
+und die T2-Zeit (Zeit bis das Signal nach einer Anregung abklingt aufgrund der
+aus der Phase laufenden Spins) bestimmen die Intensität des Gewebes auf einem
+MRT-Bild. Somit entsteht je nach Parameter eine andere Eigenschaft auf dem
+MRT-Bild. Für die Aufnahme eines dreidimensionalen Bildes wird den MR-Signalen
+noch Koordinaten zugeordnet: Man benötigt eine zusätzliche Magnetspule für
+einen Gradienten entlang der $z$-Richtung um eine Auflösung der $z$-Koordinate
+zu gewährleisten. Da die Larmorfrequenz abhängig von dem angelegten Magnetfeld
+ist, sind entlang dieses Gradienten auch die Larmorfrequenzen unterschiedlich.
+Je nach Frequenz wird nun nur eine Schicht des Körpers angeregt und somit
+können je nach Stärke des Gradienten feinere oder gröbere Schichten aufgelöst
+werden. Auch in der $x$- und $y$-Richtung wird ein zusätzlicher Gradient mit
+einer Magnetspule erzeugt. In $y$-Richtung kreisen durch die unterschiedlichen
+Larmorfrequenzen die Spins unterschiedlich schnell und erzeugen einen
+Phasengradienten. Wenn nun kurz dannach dieser Gradient ausgeschaltet wird,
+bewegen sich die Spins gleich schnell, allerdings in unterschiedlicher Phase
+und können somit ihrer Position in $y$-Richtung zugeordnet werden. Durch einen
+Gradienten in $x$-Richtung besteht das MR-Signal nicht mehr aus nur aus einer
+Frequenz sondern einem Frequenzspektrum, da die Spins unterschiedlich schnell
+präzedieren.
+
+\subsubsection{CT-Bildgebung}
+Der Computertomograph (CT) besteht aus einer Röntgenröhre mit Blenden, welche
+die Röntgenstrahlung kontrolliert zum Patienten leiten und einem Detektor.
+Dieser detektiert die Energie der Strahlung, welche durch das Gewebe
+abgeschwächt wurde. Nun werden viele Bilder aus unterschiedlichen Perspektiven
+aufgenommen durch Drehungen der Röntgenröhre und des Detektors. Die
+unterschiedlichen Absorptionscharakteristiken der Gewebeschichten resultiert in
+Kontrasten auf den Bildern.
+
+\subsection{Bildregistrierung}
+Die Informationen dieser zwei verschiedenen Bildgebungssysteme werden
+miteinander kombiniert um eine Diagnose zu stellen oder medizinische Eingriffe
+zu planen. Um diese Daten geometrisch zu verknüpfen benötigt es die sogenannte
+Bildregistrierung. Die Bildregistrierung beruht darauf, dass ein Datensatz als
+Referenz verwendet wird und für den zweiten Datensatz eine Transformation
+gesucht wird, die diesen mit dem ersten optimal überlagert. In dieser
+Transformation wird für jeden Bildpunkt berechnet wohin dieser im
+transformierten Bild liegt. Daneben benötigt man ein Interpolationsverfahren
+um die Intensitätswerte an den Pixel-Positionen im transformierten Bild, da
+ein Bild aufgrund der Pixel diskretisiert ist.\\
+Da es sich hier um ein inverses Problem handelt, weil die Transformation nicht
+bekannt ist, sondern nur das Referenzbild und das transformierte Bild (bewegtes
+Bild), kann dies nur mit Hilfe eines Optimierungsverfahren gelöst werden. 
+Der Algorithmus der Bildregistrierung basiert auf einer Metrik, welche die
+Ähnlichkeit zweier Bilddatensätze beschreibt und einer Transformation, die die
+Ähnlichkeit zwischen bewegtem Bild und Referenzbild erhöht. Hinzu kommen das
+Interpolationsverfahren und ein Optimierungsalgorithmus.
+
+\subsubsection{Ähnlichkeitsmaße}
+Zwar gibt es neben dem intensitätsbasierten auch das landmarkenbasierte Maß,
+jedoch wollen wir uns hier auf Ersteres konzentrieren. Hierbei werden die
+Intensitätswerte der Bilder genutzt um die Ähnlichkeit zu bestimmen. Es wird
+nun zwischen einer Metrik, welche die Bildintensitäten vergleicht, und einer,
+welche nur statistische Informationen der Bilder nutzt, unterschieden. Es muss
+jedoch beachtet werden, dass die erstere Metrik nur im monomodalen Fall genutzt
+werden kann da nur dort garantiert werden kann, dass gleiche Informationen
+durch gleiche Intensitätenskontraste dargestellt werden.\\
+Mit Hilfe der mittleren quadratischen Abweichung (Mean Squared Difference, MSD)
+kann man die Bildintensitäten direkt vergleichen:
+\begin{equation}
+  \label{eq:msd}
+  M_{MSD}=\frac{1}{N} \sum_{i=1}^N (R(x_i)-M^\mathcal{T}(x_i))^2
+\end{equation}
+$N$ ist die Anzahl betrachteter Punkte, $R$ das Referenzbild, $x_i$ die
+Voxelkoordinaten und $M^\mathcal{T}$ das bewegte Bild, welches mit der
+Transformation $\mathcal{T}$ in das Koordinatensystem des Referenzbildes
+transformiert wurde.\\
+Ein anderes Ähnlichkeitsmaß ist Mutual Information (MI), welches genutzt wird
+falls CT- und MRT-Aufnahmen miteinander verglichen werden sollen, da hier die
+Kontraste der Bildintensitäten nicht direkt verglichen werden können. Bei
+diesem Ähnlichkeitsmaß werden nur statistische Informationen der
+Bildintensitäten verwendet:
+\begin{equation}
+  \label{eq:mi}
+  M_{MI}=H(I_A)+H(I_B)-H(I_A,I_B)
+\end{equation}
+wobei die marginale Entropie $H(I)$ der Bilddaten $I$ wie folgt definiert ist:
+\begin{equation}
+  \label{eq:mi_h}
+  H(I)=-K \sum_a p_I(a) \cdot \log{p_I(a)}
+\end{equation}
+mit der Wahrscheinlichkeit $p(a)$ der Intensität $a$ und einer positiven
+Konstante $K$, die abhängig von der gewählten Basis des Logarithmus ist. Die
+gemeinsame Entropie $H(I_A,I_B)$ ist analog definiert, allerdings ist die
+Wahrscheinlichkeit $p_{I_A,I_B}(a,b)$ nun entsprechend zweidimensional.\\
+Die Wahrscheinlichkeit wird mit Hilfe von einem (zweidimensionalen)
+Histogramms berechnet, auf dem die Häufigkeiten der Intensitäten $a$ in
+gruppierte Bins eingetragen werden.
+
+\subsubsection{Transformationen}
+Man unterscheidet zwischen der Transformation der Bildintensitäten und der
+geometrischen Transformation, welche wir genauer betrachten wollen. Hier wird
+zusätzlich differenziert zwischen einer lokalen oder globalen Transformation
+der Bilddaten. Die globale Transformation basiert darauf, dass sie für alle
+Bildpunkte gleich ist, die lokale Transformation ist für jeden Punkt
+verschieden. Ein einfaches Modell der globalen Transformation ist eine
+Translation mit einer Rotation. Hierbei gibt es 3 Freiheitsgrade für die
+Translation und 3 für die Rotation. Da sich hier der Abstand zwischen zwei
+Bildpunkten nicht ändert, bezeichnet man eine solche Transformation als rigide.
+Erweitert man diese Transformation um eine mögliche Änderung der Skalierungen
+und Scherungen, so erhöht sich die Zahl der zu optimierenden Parameter auf 12
+und man spricht von einer affinen Transformation. Für die transformierten
+Koordinaten $(x',y',z')$ eines Punktes $(x,y,z)$ gilt nun folgende Darstellung:
+\begin{equation}
+  \begin{pmatrix}
+    x' \\ y' \\ z' \\ 1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    p_1 & p_2 & p_3 & p_4 \\
+    p_5 & p_6 & p_7 & p_8 \\
+    p_9 & p_{10} & p_{11} & p_{12} \\
+    p_{13} & p_{14} & p_{15} & p_{16}
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+    x \\ y \\ z \\ 1
+  \end{pmatrix}
+\end{equation}
+Eine deformierbare Transformation wird hingegen beschrieben mittels eines
+Transformationsfeldes. Hier ist die Transformation eines Voxels abhängig von
+dessen Position im Bildvolumen. Um nicht für jedes Voxel eigene
+Transformationsparameter zu wählen, definiert man ein grobes Gitter. An den
+Gitterpunkten wird die Transformation berechnet und anschließend werden für die
+dazwischenliegenden Punkte die Parameter interpoliert, da die Transformation
+kontinuierlich sein soll. Um eine solche deformierbare Transformation zu
+beschleunigen, wird zunächst ein grobes Gitter gewählt und später diese
+Gitterpunkte genutzt um auf einem feineren Gitter zu optimieren.

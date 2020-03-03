@@ -1,0 +1,178 @@
+\section{Auswertung}
+\subsection{Ermittlung der Kamerabewegung aus einer Bildfolge}
+\begin{wrapfigure}{r}{0.4\textwidth}
+  \vspace{-10pt}
+  \caption{}
+  \label{fig:translrel}
+  \vspace{-10pt}
+  \resizebox{\linewidth}{!}{\input{graphs/A1_translrel.pgf}}
+  \vspace{-30pt}
+\end{wrapfigure}
+Das Translationsverhältnis zwischen Bewegung der Kamera und Verschiebung in
+Pixeln wurde über die Transformationsmatrix in Matlab ausgelesen. Zusätzlich
+haben wir das Ergebnis testweise an einer Bildüberlagerung überprüft. Die
+Messergebnisse des Verhältnisses sind in Abbildung \ref{fig:translrel}
+dargestellt.\\
+Wir haben \SI{3.39(1)}{pixel\per\centi\meter} gemessen, wobei der Fehler rein
+aus der Regression stammt, für welche mögliche Fehler der Verschiebungen und
+des Transformationsverfahrens nicht in Betracht gezogen wurden.\\
+Betrachtet man Abbildung \ref{pic:transl} (Appendix), so ist leicht zu sehen,
+dass die Transformation bei \SI{65}{\centi\meter} nicht mehr funktioniert hat.
+Dies könnte unter anderem dadurch entstanden sein, dass sich bei einer
+Translation von einer 3-dimensionalen Umgebung auch die Perspektive ändert, je
+entfernter die Umgebung im Vergleich zur Translation, desto geringer ist der
+Effekt. Den Effekt kann gut sehen wenn man zum Beispiel den Stuhl im Bild bei
+\SI{35}{\centi\meter} Translation mit dem Bild bei \SI{5}{\centi\meter}
+vergleicht. Im Ersteren erkennt man an der Lehne deutliche Unterschiede in der
+Überlagerung (lila beziehungsweise grün), was im Letzteren kaum sichtbar ist.
+Der grüne Balken am rechten Rand kommt daher, da dieser Bereich nicht im
+Aufnahmebreich des bewegten Bildes liegt.
+
+\subsection{Ähnlichkeit bei monomodalen Bilddaten}
+In Abbildung \ref{fig:ct2ct_rotparam} sind die Variationen der drei
+verschiedenen Rotationsparameter dargestellt. An der Periodizität von
+\num{2\pi} der Parameter \num{0}, \num{1} und \num{2} erkennt man, dass es
+sich hierbei um die Rotationsparameter handelt. Ebenfalls gut zu erkennen ist,
+dass das Minimum der Metrik bei \num{0} bzw. \num{2\pi} und \num{4\pi} ist,
+wobei das Plateau zwischen den Minima vermutlich dadurch entstanden ist, dass
+der Algorithmus keine Ähnlichkeit mehr festellen konnte.
+\begin{figure}[h]
+  \caption{Metrik in Abhängigkeit der Rotationsparameter}
+  \label{fig:ct2ct_rotparam}
+  \vspace{-10pt}
+  \resizebox{0.32\linewidth}{!}{\input{graphs/A2_ct2ct_param0.pgf}}
+  \hfill
+  \resizebox{0.32\linewidth}{!}{\input{graphs/A2_ct2ct_param1.pgf}}
+  \hfill
+  \resizebox{0.32\linewidth}{!}{\input{graphs/A2_ct2ct_param2.pgf}}
+  \vspace{-10pt}
+\end{figure}
+\newpage
+In Abbildung \ref{fig:ct2ct_translparam} sind die Variationen der drei
+Translationsparameter dargestellt. Die Parameter \num{3} und \num{4} sind die
+Translationsparameter für die x- und y-Achse, während Parameter \num{5} der
+Translationsparameter für die z-Achse ist. Dies erkennt man daran, dass die
+z-Achse kleine Plateaus aufweist, die auf die geringere Auflösung im Vergleich
+zur x- bzw. y-Achse zurückzuführen sind. Hier bleibt eine kleine Verschiebung
+der Metrik im gleichen Voxel.
+\begin{figure}[h]
+  \caption{Metrik in Abhängigkeit der Translationsparameter}
+  \label{fig:ct2ct_translparam}
+  \vspace{-10pt}
+  \resizebox{0.32\linewidth}{!}{\input{graphs/A2_ct2ct_param3.pgf}}
+  \hfill
+  \resizebox{0.32\linewidth}{!}{\input{graphs/A2_ct2ct_param4.pgf}}
+  \hfill
+  \resizebox{0.32\linewidth}{!}{\input{graphs/A2_ct2ct_param5.pgf}}
+  \vspace{-10pt}
+\end{figure}
+
+\subsection{Ähnlichkeit bei multimodalen Bilddaten}
+\begin{figure}[h]
+  \caption{Metrikverhalten bei Überlagerung von CT und MRT Daten}
+  \label{fig:ct2mrt_param}
+  \vspace{-10pt}
+  \resizebox{0.48\linewidth}{!}{\input{graphs/A2_ct2mrt_param0.pgf}}
+  \hfill
+  \resizebox{0.48\linewidth}{!}{\input{graphs/A2_ct2mrt_param3.pgf}}
+  \vspace{-10pt}
+\end{figure}
+In Abbildung \ref{fig:ct2mrt_param} ist das Verhalten der beiden Metriken für
+einen Rotationsparameter und einem Translationsparameter dargestellt. Da CT und
+MRT Scans unterschiedliche Kontrastverhältnisse haben, erwarten wir keine
+sinnvollen Ergebnisse von der MSD Metrik (rot). Dies ist bei Parameter \num{0}
+gut erkennbar, da der Metrikwert bei stärkerer Abweichung vom optimalen
+Parameter abnimmt. Der Wert der MI Metrik (blau) steigt dagegen bei größerem
+Shift, was bedeutet, dass die MI Metrik trotz unterschiedlicher Messmethoden
+korrekt funktioniert.
+Bei Parameter \num{3} handelt es sich um einen Translationsparameter, was
+bedeutet, dass wir lediglich um einen Voxel insgesamt verschieben, was sehr
+wenig ist. Die MI Metrik hat ihr Minimum bei \num{0.5} statt \num{0.0},
+allerdings liegt der Unterschied des Metrikwertes bei etwa \num{0.003}, was
+verglichen mit den Werten beim Translationsparameter sehr gering ist. Die MSD
+Metrik kann bei so einer kleinen Skala nicht sinnvoll analysiert werden.
+\vspace{12pt}
+\begin{wrapfigure}{r}{0.5\linewidth}
+  \vspace{-10pt}
+  \caption{}
+  \label{fig:ct2mrt_bins}
+  \vspace{-10pt}
+  \resizebox{\linewidth}{!}{\input{graphs/A2_ct2mrt_bins.pgf}}
+  \vspace{-30pt}
+\end{wrapfigure}
+Verändert man die Anzahl der Bins der MI Metrik, das heißt man verfeinert das
+Histogram zur Bestimmung der Wahrscheinlichkeit für Gleichung \ref{eq:mi_h}.
+Wie man an Abbildung \ref{fig:ct2mrt_bins} erkennt, verschiebt sich vor allem
+das Minimum nahe des optimalen Wertes bei \num{0.0}, außerdem erkennt man, dass
+die Kurven mit hoher Anzahl an Bins etwas mehr Konturen in der Nähe des Wertes
+\num{0.75} aufweisen. Es ist anzumerken, dass bei einer Anzahl von \num{5} Bins
+die Metrik keine Ergebnisse mehr geliefert hat.\\
+Verwendet man mehr Bins, so kann der Algorithmus genauer zwischen den
+Intensitätswerten unterscheiden, so dass die Metrik besser minimiert werden
+kann. Je höher die Anzahl der Bins, desto näher kann man an das Optimum
+gelangen, daher verbessert sich das Ergebniss bei hoher Binzahl nur noch
+geringfügig.
+
+\subsection{Rigide 3D-Registrierung von medizinischen Bilddaten}
+\begin{wrapfigure}{r}{0.5\linewidth}
+  \vspace{-10pt}
+  \caption{}
+  \label{fig:A3}
+  \vspace{-10pt}
+  \resizebox{\linewidth}{!}{\input{graphs/A3_sampling.pgf}}
+  \vspace{-30pt}
+\end{wrapfigure}
+In diesem Teil haben wir MRT Scans auf CT Scans transformiert, und dabei die
+Qualität der Transformation und die Rechenzeit beobachtet. Wir fanden gute
+Ergebnisse bei drei Registrierungsstufen mit Shrink-Faktoren von \num{4},
+\num{2} und \num{1} im letzten Schritt, so wie ein Smoothing-Faktor von \num{2}
+für alle Stufen bei einer Sampling-Rate von \SI{50}{\percent}.\\
+In Abbildung \ref{pic:A3} sind Überlagerungen mit der genannten gute Strategie,
+so wie einer Berechnung ohne zusätzliche Registrierungsstufen bei einer vollen
+Sampling-Rate zu sehen, die deutlich länger zum Berechnen benötigt hat. Bei
+genauen Betrachten erkennt man Qualitätsunterschiede, etwa im Fenster links
+oben im unteren Bereich des Gehirns, oder im Fenster oben rechts an den Augen.
+Es stellt sich also heraus, dass die Qualität nicht durch die Sampling-Rate
+bestimmt wird, obwohl diese einen großen Einfluss auf die Rechenzeit hat, denn
+an Abbildung \ref{fig:A3} erkennt man, dass die Zeit zur Berechnung der
+Transformation in etwa linear zur Sampling-Rate (das heißt zur Anzahl der
+verwendeten Bildpunkte) ist.
+\newpage
+
+\subsection{Deformierbare Registrierung}
+\begin{wrapfigure}{r}{0.5\linewidth}
+  \vspace{-10pt}
+  \caption{}
+  \label{fig:A4}
+  \vspace{-10pt}
+  \resizebox{\linewidth}{!}{\input{graphs/A4_gppd.pgf}}
+  \vspace{-30pt}
+\end{wrapfigure}
+In Abbildung \ref{pic:deform} (Appendix) sind das bewegte Bild und das fixierte
+Zielbild abgebildet. Das optimale Registrierungsverfahren um das Quadrat auf
+den Kreis zu transformieren lag bei uns bei \SI{30}{gppd} (grid points per
+dimension, Gitterpunkte pro Dimension), wobei die gleichen Registrierungsstufen
+wie zuvor verwendet wurden. Es ist erkennbar, dass bei niedrigen Auflösungen
+der Kreis nicht rund ist, und am Rand graue Artefakte zu sehen sind. In diesen
+Bereichen kann der Algorithmus keine Werte finden. Im Fall von \SI{5}{gppd}
+kann sich etwa vorstellen, dass in den Ecken nur ein einzelner Gitterpunkt im
+schwarzen Bereich ist und dieser in Richtung Mitte gezogen wird, so dass im
+transformierten Bild am Rand keine Informationen verfügbar sind. Ist die Anzahl
+der Gitterpunkte zu hoch, so ergibt sich ein anderes Problem, die Gitterpunkte
+werden zu nah aneinander transformiert. Gut erkennbar bei \SI{100}{gppd}, also
+wo jeder Pixel auch ein Gitterpunkt ist.\\
+An den Ecken des Quadrats müssen mehrere Pixel auf die Ränder des Kreises
+transformiert werden, was zu Informationsverlust an diesen Stellen führt,
+weshalb die grauen Bereiche um den transformierten Kreis entstehen.\\
+Um die Transformation besser sichtbar zu machen, haben wir die Transformation
+mit den optimalen Parametern auf ein Schachbrett angewendet. Man erkennt gut,
+dass die äußeren und inneren Quadrate von der Transformation nicht beeinflusst
+werden. Da unser Schachbrett \num{10} Quadrate pro Dimension hat, kommen auf
+jedes Quadrat \num{9} Gitterpunkte. An den Eck-Quadraten, die transformiert,
+erkennt man gut, dass zwischen den Gitterpunkten interpoliert wird.\\
+Wir haben auch die benötigte Rechenzeit mit der Anzahl der Gitterpunkte pro
+Dimension verglichen, die Messergebnisse sind in Abbildung \ref{fig:A4}
+dargestellt. Wie nach dem vorhergien Teil zu erwarten, ist die benötigte
+Rechenzeit des Algorithmus linear zur Anzahl der Gitterpunkte. Bei einem
+2-dimensionalen Bild ist der Verlauf also quadratisch zur Anzahl der
+Gitterpunkte pro Dimension.

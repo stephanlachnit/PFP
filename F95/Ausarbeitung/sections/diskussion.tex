@@ -1,0 +1,43 @@
+\section{Diskussion}
+Im ersten Versuchteil war sehr anschaulich zu sehen, wie die Transformationen
+einer einfachen Translation funktionieren. Wir haben herausgefunden, dass die
+Transformation bei kleinen Translationen am besten funktioniert, da bei
+größeren Abständen aufgrund des räumlichen Effekts die Ähnlichkeit schlechter
+festgestellt werden kann.\\
+Das Verschiebungsverhältnis zwischen fixiertem und bewegten Bild ist konstant
+und lag bei uns bei \SI{3.39(1)}{pixel\per\centi\meter}.\\
+Im zweiten Teil haben wir die verschiedenen Metriken untersucht. Im monomodalen
+Fall konnten wir zwischen Rotations- und Translationsparametern unterscheiden.
+Bei den Rotationsparametern ist zu sehen, dass die Metriken um Vielfache von
+\num{2\pi} ihr Minimum haben und dazwischen der Algorithmus keine Ähnlichkeit
+mehr festellen kann.\\
+Im multimodalen Fall konnten wir bei Rotationsparameter gut erkennen, dass die
+MSD Metrik wie zu erwarten keine sinnvollen Ergebnisse mehr liefert, während
+die MI Metrik noch einen sinnvollen Verlauf hat.\\
+Beim Translationsparameter haben wir leider nur einen sehr kleinen Shift
+berechnet, dadurch konnten wir dies dort nicht wirklich erkennen. Allerdings
+kann man am Verlauf der MI Metrik feststellen, dass der vorgegebene optimale
+Wert um etwa einen halben Voxel von dem Metrikminimum abweicht. Dies könnte
+daran liegen, dass die optimalen Parameter von Hand bestimmt wurden.\\
+Bei der Variation der Anzahl der Bins der MI Metrik, ist zu erkennen, dass das
+eine größere Anzahl positive Auswirkungen auf die Genauigkeit des Algorithmus
+hat, wobei der Effekt mit steigender Anzahl abnimmt.\\
+Im Versuchsteil über die Rigiden 3D-Registrierungen war das Finden der
+optimalen Registrierungsstrategie die Hauptaufgabe. Aufgrund der begrenzten
+Zeit, die wir hatten um uns in die Programmbibliothek einzulesen, bestand
+dieser Teil hauptsächlich aus Ausprobieren. Hatte man einmal eine gute
+Strategie, hat diese auch bei unterschiedlichen Patientendaten gute Ergebnisse
+geliefert.\\
+Im letzten Teil wurde die deformierbare Transformation genauer betrachtet.
+Zunächst haben wir eine gute Auflösung des Transformationsfeldes gesucht, und
+dies anhand einer Transformation eines Rechtecks auf einen Kreis untersucht.
+Dabei haben wir festgestellt, dass zu viele oder zu wenige Gitterpunkte bei der
+Transformationen zu unerwünschten Ergebnissen führen. Nachdem wir einen guten
+Wert gefunden haben, haben wir diese Transformation auf ein Schachbrettmuster
+angewandt, um sie besser zu verdeutlichen.\\
+Als Fazit können wir festhalten, dass der Versuch gut durchzuführen war und gut
+aufgezeigt, wie Physik in anderen Bereichen, wie in diesem Fall der Medizin,
+Anwendungen findet. Besonders realitätsnah war hierbei die Verwendung von
+medizinischen Patientenbildern. Der Teil mit der deformierbaren Transformation
+hat besonders anschaulich gezeigt, dass das Themengebiet aber auch darüber
+hinausgehen kann.

@@ -1,0 +1,53 @@
+% !TeX program = lualatex
+\documentclass[12pt]{article}
+
+% Typesetting
+\usepackage[a4paper]{geometry}
+\usepackage[english,ngerman]{babel}
+\usepackage{microtype}
+
+% Formatting
+\usepackage{siunitx}
+\usepackage{amsmath}
+
+% Figures
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{pdfpages}
+
+% references
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{hyperref}
+
+\sisetup{separate-uncertainty=true}
+
+\textwidth=170mm
+\hoffset=-10mm
+\textheight=240mm
+\voffset=-12mm
+
+\begin{document}
+
+\input{sections/titlepage.tex}
+
+\selectlanguage{ngerman}
+\pagenumbering{arabic}
+\tableofcontents
+
+\newpage
+\input{sections/einleitung.tex}
+\input{sections/grundlagen.tex}
+\input{sections/versuchsdurchführung.tex}
+
+\newpage
+\input{sections/auswertung.tex}
+
+\newpage
+\input{sections/diskussion.tex}
+
+\newpage
+\input{sections/appendix.tex}
+
+\end{document}

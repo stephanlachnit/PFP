@@ -6,10 +6,17 @@
 %% Make sure the required packages are loaded in your preamble
 %%   \usepackage{pgf}
 %%
+%% and, on pdftex
+%%   \usepackage[utf8]{inputenc}\DeclareUnicodeCharacter{2212}{-}
+%%
+%% or, on luatex and xetex
+%%   \usepackage{unicode-math}
+%%
 %% Figures using additional raster images can only be included by \input if
 %% they are in the same directory as the main LaTeX file. For loading figures
 %% from other directories you can use the `import` package
 %%   \usepackage{import}
+%%
 %% and then include the figures with
 %%   \import{<path to file>}{<filename>.pgf}
 %%
@@ -251,7 +258,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.757002in,y=0.284413in,,top]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Shift of parameter 0}%
+\pgftext[x=1.757002in,y=0.284413in,,top]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Shift von Parameter 0}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -289,7 +296,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=0.518842in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.7}%
+\pgftext[x=0.339969in, y=0.518842in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.7}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -327,7 +334,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=0.836790in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.6}%
+\pgftext[x=0.339969in, y=0.836790in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.6}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -365,7 +372,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=1.154738in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.5}%
+\pgftext[x=0.339969in, y=1.154738in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.5}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -403,7 +410,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=1.472686in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.4}%
+\pgftext[x=0.339969in, y=1.472686in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.4}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -441,7 +448,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=1.790634in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.3}%
+\pgftext[x=0.339969in, y=1.790634in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.3}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -479,7 +486,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=2.108581in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.2}%
+\pgftext[x=0.339969in, y=2.108581in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.2}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -517,7 +524,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=2.426529in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.1}%
+\pgftext[x=0.339969in, y=2.426529in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont −0.1}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -555,13 +562,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.456342in,y=2.744477in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 0.0}%
+\pgftext[x=0.456342in, y=2.744477in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 0.0}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.284413in,y=1.684421in,,bottom,rotate=90.000000]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont MI value}%
+\pgftext[x=0.284413in,y=1.684421in,,bottom,rotate=90.000000]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont MI Metrik}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.774444in}{0.571604in}}{\pgfqpoint{1.965116in}{2.225635in}}%
@@ -1178,15 +1185,15 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.800000}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.601512in}{0.641048in}}%
+\pgfpathmoveto{\pgfqpoint{1.594392in}{0.641048in}}%
 \pgfpathlineto{\pgfqpoint{2.642338in}{0.641048in}}%
 \pgfpathquadraticcurveto{\pgfqpoint{2.670116in}{0.641048in}}{\pgfqpoint{2.670116in}{0.668826in}}%
 \pgfpathlineto{\pgfqpoint{2.670116in}{1.674225in}}%
 \pgfpathquadraticcurveto{\pgfqpoint{2.670116in}{1.702002in}}{\pgfqpoint{2.642338in}{1.702002in}}%
-\pgfpathlineto{\pgfqpoint{1.601512in}{1.702002in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.573735in}{1.702002in}}{\pgfqpoint{1.573735in}{1.674225in}}%
-\pgfpathlineto{\pgfqpoint{1.573735in}{0.668826in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.573735in}{0.641048in}}{\pgfqpoint{1.601512in}{0.641048in}}%
+\pgfpathlineto{\pgfqpoint{1.594392in}{1.702002in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.566614in}{1.702002in}}{\pgfqpoint{1.566614in}{1.674225in}}%
+\pgfpathlineto{\pgfqpoint{1.566614in}{0.668826in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.566614in}{0.641048in}}{\pgfqpoint{1.594392in}{0.641048in}}%
 \pgfpathclose%
 \pgfusepath{stroke,fill}%
 \end{pgfscope}%
@@ -1197,15 +1204,15 @@
 \definecolor{currentstroke}{rgb}{0.121569,0.466667,0.705882}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.629290in}{1.589535in}}%
-\pgfpathlineto{\pgfqpoint{1.907068in}{1.589535in}}%
+\pgfpathmoveto{\pgfqpoint{1.622169in}{1.589535in}}%
+\pgfpathlineto{\pgfqpoint{1.899947in}{1.589535in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.018179in,y=1.540924in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 10 bins}%
+\pgftext[x=2.011058in,y=1.540924in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 10 Bins}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1214,15 +1221,15 @@
 \definecolor{currentstroke}{rgb}{1.000000,0.498039,0.054902}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.629290in}{1.385677in}}%
-\pgfpathlineto{\pgfqpoint{1.907068in}{1.385677in}}%
+\pgfpathmoveto{\pgfqpoint{1.622169in}{1.385677in}}%
+\pgfpathlineto{\pgfqpoint{1.899947in}{1.385677in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.018179in,y=1.337066in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 20 bins}%
+\pgftext[x=2.011058in,y=1.337066in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 20 Bins}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1231,15 +1238,15 @@
 \definecolor{currentstroke}{rgb}{0.172549,0.627451,0.172549}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.629290in}{1.181820in}}%
-\pgfpathlineto{\pgfqpoint{1.907068in}{1.181820in}}%
+\pgfpathmoveto{\pgfqpoint{1.622169in}{1.181820in}}%
+\pgfpathlineto{\pgfqpoint{1.899947in}{1.181820in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.018179in,y=1.133209in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 50 bins}%
+\pgftext[x=2.011058in,y=1.133209in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 50 Bins}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1248,15 +1255,15 @@
 \definecolor{currentstroke}{rgb}{0.839216,0.152941,0.156863}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.629290in}{0.977962in}}%
-\pgfpathlineto{\pgfqpoint{1.907068in}{0.977962in}}%
+\pgfpathmoveto{\pgfqpoint{1.622169in}{0.977962in}}%
+\pgfpathlineto{\pgfqpoint{1.899947in}{0.977962in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.018179in,y=0.929351in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 100 bins}%
+\pgftext[x=2.011058in,y=0.929351in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 100 Bins}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1265,15 +1272,15 @@
 \definecolor{currentstroke}{rgb}{0.580392,0.403922,0.741176}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.629290in}{0.774105in}}%
-\pgfpathlineto{\pgfqpoint{1.907068in}{0.774105in}}%
+\pgfpathmoveto{\pgfqpoint{1.622169in}{0.774105in}}%
+\pgfpathlineto{\pgfqpoint{1.899947in}{0.774105in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.018179in,y=0.725494in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 256 bins}%
+\pgftext[x=2.011058in,y=0.725494in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 256 Bins}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%

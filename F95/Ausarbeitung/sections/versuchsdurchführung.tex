@@ -1,15 +1,15 @@
 \section{Versuchsdurchführung}
 \subsection{Ermittlung einer Kamerabewegung}
 Im ersten Versuchsteil soll mit Hilfe einer Bildfolge die Translationsbewegung
-einer Kamera ermittelt werden. 
+einer Kamera ermittelt werden.
+
 \subsubsection{Aufbau}
 Der Versuchsaufbau besteht aus einer USB-Kamera, welche auf einer Schiene für
 die Kameraführung befestigt ist. Die Kamera ist an einem Computer
-angeschlossen, wie auch im Versuchsprotokoll zu erkennen. An diesem soll nun
+angeschlossen, wie auch im Versuchsprotokoll zu erkennen. An diesem sollen nun
 mit Hilfe von Matlab die Bilder ausgewertet werden. Die Kamerafunktionalität
 wird anschließend getestet indem das Bild als Video angezeigt wird und die
-Kamera auf der Schiene bewegt wird. Wenn dies alles ohne Probleme funktioniert
-kann mit dem ersten Versuchsteil begonnen werden:
+Kamera auf der Schiene bewegt wird.
 
 \subsubsection{Bildaufnahme mit der Kamera}
 Die Kamera wird auf eine Wand mit möglichst markanten Gegenständen
@@ -20,44 +20,53 @@ Versuchsprotokoll notiert.
 \subsubsection{Paarweise Registrierung der Aufnahmen}
 Diese Bilder werden nun in Matlab mit Hilfe eines Algorithmus für eine reine
 Translation paarweise zueinander registriert und die resultierenden Bilder
-gespeichert. Zusätzlich sollen die durch Matlab ermittelten
-Translationparameter notiert werden.
+gespeichert. Zusätzlich werden die durch Matlab ermittelten Translationparameter
+notiert.
 
 \subsection{Ähnlichkeit bei monomodalen und multimodalen Bilddaten}
 Nun sollen Ähnlichkeitsmaße genauer betrachtet werden. Mit der MSD- und
 MI-Metrik wird untersucht wie sich die Ähnlichkeit von der verwendeten
 Transformation ändert. Dafür werden 3D-Bilddatensätze aus CT und MRT Aufnahmen
 des Kopfes genutzt. Mit Hilfe des Trainingsdatensatzes wurden bereits die
-optimalen Transformationsparameter bestimmt. Diese Parameter sollen nun sowohl
+optimalen Transformationsparameter bestimmt. Diese Parameter werden nun sowohl
 im monomodalen als auch im multimodalen Fall betrachtet werden:
 
 \subsubsection{Aufnahme der Ähnlichkeit im monomodalen Fall}
 Zunächst ist im monomodalen Fall das Referenzvolumen und das zu registrierende
 Volumen dasselbe, in unserem Fall ist das zu untersuchende Volumen das
-CT-Volumen.
+CT-Volumen. Im Programm wird dafür auf die optimalen Werten ein Shift addiert
+und anschließend die Metrikwerte berechnet.
 
 \subsubsection{Aufnahme der Ähnlichkeit im multimodalen Fall}
 Nun soll als zu registrierendes Volumen das MR-T2-Volumen gewählt werden. Neben
-der Variation der Parameter soll zusätzlich die Anzahl der Histogramm-Bins
-verändert werden.
+der Variation der Parameter wird zusätzlich die Anzahl der Histogramm-Bins
+im Code verändert.
 
 \subsection{Rigide 3D-Registrierung von medizinischen Bilddaten}
 Mit einem Algorithmus sollen in diesem Versuchsteil CT- und MR-T2 Daten
 registriert werden um anschließend eine optimale Transformation zu ermitteln.
+
 \subsubsection{Implementierung des Algorithmus}
 In diesem Algorithmus wird zur Registrierung Mutual Information zusammen mit
-einem Quasi-Newton-Optimierer verwendet. 
+einem Quasi-Newton-Optimierer verwendet. Der Algorithmus kann mit verschiedenen
+Parametern optimiert werden. Wir betrachten dabei die Anzahl der
+Registrierungsstufen, wobei bei jeder Stufe ein Auflösungsfaktor und
+Glättungsfaktor gesetzt werden. Anhand eines Trainingbildes haben wir diese
+Parameter von Hand optimiert.
+
 \subsubsection{Anwendung auf die Testdaten}
 Der Registrierungsalgorithmus mit den optimalen Parameter der Trainingsdaten
-soll nun auf die Testdaten angewandt werden.
+soll nun auf die Testdaten angewandt werden, um ein Bild davon zu bekommen wie
+gut die bestimmten Parametern bei verschiedenen Daten funktionieren.
 
 \subsection{Deformierbare Registrierung}
 Nachdem die ersten drei Versuchsteile sich nur mit rigiden Transformationen
 beschäftigt haben, soll nun die deformierbare Registrierung anhand zweier
-Beispiele demonstriert werden.\\
+Beispiele betrachtet werden.\\
 Zuerst soll ein weißes Rechteck auf schwarzem Hintergrund zu einem weißen Kreis
 auf schwarzem Hintergrund deformiert werden. Besonders soll bei diesem Teil der
 Einfluss der Anzahl der Gitterpunkte des Transformationsgitters auf das
 Registrierungsergebnis und die Laufzeit der Registrierung untersucht werden.
 Danach soll das optimale Transformationsfeld auf ein Schachbrettmuster
-angewandt werden.
+angewandt werden. Ein Schachbrettmuster ist besonders hilfreich, da man gut
+erkennen kann, wohin einzelne Bereiche des Bildes transformiert werden.

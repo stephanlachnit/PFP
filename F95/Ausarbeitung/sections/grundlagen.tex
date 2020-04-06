@@ -93,8 +93,8 @@ Intensitätswerte der Bilder genutzt um die Ähnlichkeit zu bestimmen. Es wird
 nun zwischen einer Metrik, welche die Bildintensitäten vergleicht, und einer,
 welche nur statistische Informationen der Bilder nutzt, unterschieden. Es muss
 jedoch beachtet werden, dass die erstere Metrik nur im monomodalen Fall genutzt
-werden kann da nur dort garantiert werden kann, dass gleiche Informationen
-durch gleiche Intensitätenskontraste dargestellt werden.\\
+werden kann da nur dort garantiert ist, dass gleiche Informationen durch gleiche
+Intensitätenskontraste dargestellt werden.\\
 Mit Hilfe der mittleren quadratischen Abweichung (Mean Squared Difference, MSD)
 kann man die Bildintensitäten direkt vergleichen:
 \begin{equation}
@@ -160,9 +160,9 @@ Koordinaten $(x',y',z')$ eines Punktes $(x,y,z)$ gilt nun folgende Darstellung:
 Eine deformierbare Transformation wird hingegen beschrieben mittels eines
 Transformationsfeldes. Hier ist die Transformation eines Voxels abhängig von
 dessen Position im Bildvolumen. Um nicht für jedes Voxel eigene
-Transformationsparameter zu wählen, definiert man ein grobes Gitter. An den
-Gitterpunkten wird die Transformation berechnet und anschließend werden für die
-dazwischenliegenden Punkte die Parameter interpoliert, da die Transformation
-kontinuierlich sein soll. Um eine solche deformierbare Transformation zu
-beschleunigen, wird zunächst ein grobes Gitter gewählt und später diese
-Gitterpunkte genutzt um auf einem feineren Gitter zu optimieren.
+Transformationsparameter wählen zu müssen, kann ein grobes Gitter definiert
+werden. An den Gitterpunkten wird die Transformation berechnet und anschließend
+werden für die dazwischenliegenden Punkte die Parameter interpoliert, da die
+Transformation kontinuierlich sein soll. Um eine solche deformierbare
+Transformation zu beschleunigen, wird zunächst ein grobes Gitter gewählt und
+später diese Gitterpunkte genutzt um auf einem feineren Gitter zu optimieren.

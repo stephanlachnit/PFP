@@ -1,8 +1,9 @@
 \section{Auswertung}
 \subsection{Ermittlung der Kamerabewegung aus einer Bildfolge}
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}{r}{0.45\textwidth}
+  \vspace{-6pt}
   \vspace{-10pt}
-  \caption{}
+  \caption{Die Translation in Pixeln eines entfernten Objektes im Bild ist linear zur parallelen Verschiebung einer Kamera}
   \label{fig:translrel}
   \vspace{-10pt}
   \resizebox{\linewidth}{!}{\input{graphs/A1_translrel.pgf}}
@@ -21,8 +22,8 @@ dass die Transformation bei \SI{65}{\centi\meter} nicht mehr funktioniert hat.
 Dies könnte unter anderem dadurch entstanden sein, dass sich bei einer
 Translation von einer 3-dimensionalen Umgebung auch die Perspektive ändert, je
 entfernter die Umgebung im Vergleich zur Translation, desto geringer ist der
-Effekt. Den Effekt kann gut sehen wenn man zum Beispiel den Stuhl im Bild bei
-\SI{35}{\centi\meter} Translation mit dem Bild bei \SI{5}{\centi\meter}
+Effekt. Den Effekt kann man gut sehen wenn man zum Beispiel den Stuhl im Bild
+bei \SI{35}{\centi\meter} Translation mit dem Bild bei \SI{5}{\centi\meter}
 vergleicht. Im Ersteren erkennt man an der Lehne deutliche Unterschiede in der
 Überlagerung (lila beziehungsweise grün), was im Letzteren kaum sichtbar ist.
 Der grüne Balken am rechten Rand kommt daher, da dieser Bereich nicht im
@@ -78,7 +79,7 @@ der Metrik im gleichen Voxel.
   \vspace{-10pt}
 \end{figure}
 In Abbildung \ref{fig:ct2mrt_param} ist das Verhalten der beiden Metriken für
-einen Rotationsparameter und einem Translationsparameter dargestellt. Da CT und
+einen Rotationsparameter und einen Translationsparameter dargestellt. Da CT und
 MRT Scans unterschiedliche Kontrastverhältnisse haben, erwarten wir keine
 sinnvollen Ergebnisse von der MSD Metrik (rot). Dies ist bei Parameter \num{0}
 gut erkennbar, da der Metrikwert bei stärkerer Abweichung vom optimalen
@@ -93,8 +94,9 @@ verglichen mit den Werten beim Translationsparameter sehr gering ist. Die MSD
 Metrik kann bei so einer kleinen Skala nicht sinnvoll analysiert werden.
 \vspace{12pt}
 \begin{wrapfigure}{r}{0.5\linewidth}
+  \vspace{-6pt}
   \vspace{-10pt}
-  \caption{}
+  \caption{Variation der Binanzahl beim MI Algorithmus führt bei hoher Anzahl nur noch zu geringen Veränderungen der Metrik}
   \label{fig:ct2mrt_bins}
   \vspace{-10pt}
   \resizebox{\linewidth}{!}{\input{graphs/A2_ct2mrt_bins.pgf}}
@@ -113,36 +115,37 @@ kann. Je höher die Anzahl der Bins, desto näher kann man an das Optimum
 gelangen, daher verbessert sich das Ergebniss bei hoher Binzahl nur noch
 geringfügig.
 
-\subsection{Rigide 3D-Registrierung von medizinischen Bilddaten}
+\subsection{Rigide 3D-Bildregistrierung von medizinischen Bilddaten}
 \begin{wrapfigure}{r}{0.5\linewidth}
+  \vspace{-6pt}
   \vspace{-10pt}
-  \caption{}
+  \caption{Die Berechnungsdauer steigt quasi linear mit der Samplingrate des Algorithmus}
   \label{fig:A3}
   \vspace{-10pt}
   \resizebox{\linewidth}{!}{\input{graphs/A3_sampling.pgf}}
   \vspace{-30pt}
 \end{wrapfigure}
 In diesem Teil haben wir MRT Scans auf CT Scans transformiert, und dabei die
-Qualität der Transformation und die Rechenzeit beobachtet. Wir fanden gute
-Ergebnisse bei drei Registrierungsstufen mit Shrink-Faktoren von \num{4},
-\num{2} und \num{1} im letzten Schritt, so wie ein Smoothing-Faktor von \num{2}
-für alle Stufen bei einer Sampling-Rate von \SI{50}{\percent}.\\
-In Abbildung \ref{pic:A3} sind Überlagerungen mit der genannten gute Strategie,
+Qualität der Transformation und die benötigte Rechenzeit beobachtet.\\
+Wir fanden gute Ergebnisse bei drei Registrierungsstufen mit Shrinkfaktoren von
+\num{4}, \num{2} \& \num{1}, so wie einem Glättungsfaktor von \num{2} für alle
+Stufen bei einer Sampling-Rate von \SI{50}{\percent}.\\
+In Abbildung \ref{pic:A3} sind Überlagerungen mit der genannten guten Strategie,
 so wie einer Berechnung ohne zusätzliche Registrierungsstufen bei einer vollen
-Sampling-Rate zu sehen, die deutlich länger zum Berechnen benötigt hat. Bei
+Samplingrate zu sehen, die deutlich länger zum Berechnen benötigt hat. Bei
 genauen Betrachten erkennt man Qualitätsunterschiede, etwa im Fenster links
 oben im unteren Bereich des Gehirns, oder im Fenster oben rechts an den Augen.
-Es stellt sich also heraus, dass die Qualität nicht durch die Sampling-Rate
+Es stellt sich also heraus, dass die Qualität nicht durch die Samplingrate
 bestimmt wird, obwohl diese einen großen Einfluss auf die Rechenzeit hat, denn
-an Abbildung \ref{fig:A3} erkennt man, dass die Zeit zur Berechnung der
-Transformation in etwa linear zur Sampling-Rate (das heißt zur Anzahl der
-verwendeten Bildpunkte) ist.
+an Abbildung \ref{fig:A3} erkennt man, dass die Zeit zur Berechnung in etwa
+linear zur Samplingrate (also zur Anzahl der Bildpunkte) ist.
 \newpage
 
 \subsection{Deformierbare Registrierung}
 \begin{wrapfigure}{r}{0.5\linewidth}
+  \vspace{-6pt}
   \vspace{-10pt}
-  \caption{}
+  \caption{Berechnungsdauer der deformierbaren Registrierung in Abhängigkeit der Anzahl der Gitterpunkte pro Dimension}
   \label{fig:A4}
   \vspace{-10pt}
   \resizebox{\linewidth}{!}{\input{graphs/A4_gppd.pgf}}
@@ -155,12 +158,13 @@ dimension, Gitterpunkte pro Dimension), wobei die gleichen Registrierungsstufen
 wie zuvor verwendet wurden. Es ist erkennbar, dass bei niedrigen Auflösungen
 der Kreis nicht rund ist, und am Rand graue Artefakte zu sehen sind. In diesen
 Bereichen kann der Algorithmus keine Werte finden. Im Fall von \SI{5}{gppd}
-kann sich etwa vorstellen, dass in den Ecken nur ein einzelner Gitterpunkt im
-schwarzen Bereich ist und dieser in Richtung Mitte gezogen wird, so dass im
+kann man sich etwa vorstellen, dass in den Ecken nur ein einzelner Gitterpunkt
+im schwarzen Bereich ist und dieser in Richtung Mitte gezogen wird, so dass im
 transformierten Bild am Rand keine Informationen verfügbar sind. Ist die Anzahl
 der Gitterpunkte zu hoch, so ergibt sich ein anderes Problem, die Gitterpunkte
-werden zu nah aneinander transformiert. Gut erkennbar bei \SI{100}{gppd}, also
-wo jeder Pixel auch ein Gitterpunkt ist.\\
+werden zu nah aneinander transformiert. Gut erkennbar ist das bei der
+Transformation mit \SI{100}{gppd}, also wo jeder Pixel auch ein Gitterpunkt
+ist.\\
 An den Ecken des Quadrats müssen mehrere Pixel auf die Ränder des Kreises
 transformiert werden, was zu Informationsverlust an diesen Stellen führt,
 weshalb die grauen Bereiche um den transformierten Kreis entstehen.\\
@@ -168,8 +172,9 @@ Um die Transformation besser sichtbar zu machen, haben wir die Transformation
 mit den optimalen Parametern auf ein Schachbrett angewendet. Man erkennt gut,
 dass die äußeren und inneren Quadrate von der Transformation nicht beeinflusst
 werden. Da unser Schachbrett \num{10} Quadrate pro Dimension hat, kommen auf
-jedes Quadrat \num{9} Gitterpunkte. An den Eck-Quadraten, die transformiert,
-erkennt man gut, dass zwischen den Gitterpunkten interpoliert wird.\\
+jedes Quadrat \num{9} Gitterpunkte. An den Quadraten in den Ecken, die noch
+transformiert wurden, erkennt man gut, dass zwischen den Gitterpunkten
+interpoliert wird.\\
 Wir haben auch die benötigte Rechenzeit mit der Anzahl der Gitterpunkte pro
 Dimension verglichen, die Messergebnisse sind in Abbildung \ref{fig:A4}
 dargestellt. Wie nach dem vorhergien Teil zu erwarten, ist die benötigte

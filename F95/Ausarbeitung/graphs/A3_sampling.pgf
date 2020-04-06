@@ -6,10 +6,17 @@
 %% Make sure the required packages are loaded in your preamble
 %%   \usepackage{pgf}
 %%
+%% and, on pdftex
+%%   \usepackage[utf8]{inputenc}\DeclareUnicodeCharacter{2212}{-}
+%%
+%% or, on luatex and xetex
+%%   \usepackage{unicode-math}
+%%
 %% Figures using additional raster images can only be included by \input if
 %% they are in the same directory as the main LaTeX file. For loading figures
 %% from other directories you can use the `import` package
 %%   \usepackage{import}
+%%
 %% and then include the figures with
 %%   \import{<path to file>}{<filename>.pgf}
 %%
@@ -251,7 +258,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.710007in,y=0.284413in,,top]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Sampling rate}%
+\pgftext[x=1.710007in,y=0.284413in,,top]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Samplingrate}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -289,7 +296,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.428334in,y=0.518842in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 0}%
+\pgftext[x=0.428334in, y=0.518842in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 0}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -327,7 +334,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=0.952823in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 10}%
+\pgftext[x=0.339969in, y=0.952823in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 10}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -365,7 +372,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=1.386803in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 20}%
+\pgftext[x=0.339969in, y=1.386803in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 20}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -403,7 +410,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=1.820783in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 30}%
+\pgftext[x=0.339969in, y=1.820783in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 30}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -441,7 +448,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=2.254763in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 40}%
+\pgftext[x=0.339969in, y=2.254763in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 40}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -479,13 +486,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.339969in,y=2.688743in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 50}%
+\pgftext[x=0.339969in, y=2.688743in, left, base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont 50}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.284413in,y=1.710802in,,bottom,rotate=90.000000]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Computation time [s]}%
+\pgftext[x=0.284413in,y=1.710802in,,bottom,rotate=90.000000]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Berechnungsdauer [s]}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.613922in}{0.571604in}}{\pgfqpoint{2.192170in}{2.278396in}}%
@@ -714,10 +721,10 @@
 \pgfsetstrokeopacity{0.800000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.711144in}{2.331174in}}%
-\pgfpathlineto{\pgfqpoint{2.196916in}{2.331174in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{2.224694in}{2.331174in}}{\pgfqpoint{2.224694in}{2.358952in}}%
-\pgfpathlineto{\pgfqpoint{2.224694in}{2.752778in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{2.224694in}{2.780556in}}{\pgfqpoint{2.196916in}{2.780556in}}%
+\pgfpathlineto{\pgfqpoint{1.901641in}{2.331174in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.929419in}{2.331174in}}{\pgfqpoint{1.929419in}{2.358952in}}%
+\pgfpathlineto{\pgfqpoint{1.929419in}{2.752778in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.929419in}{2.780556in}}{\pgfqpoint{1.901641in}{2.780556in}}%
 \pgfpathlineto{\pgfqpoint{0.711144in}{2.780556in}}%
 \pgfpathquadraticcurveto{\pgfqpoint{0.683366in}{2.780556in}}{\pgfqpoint{0.683366in}{2.752778in}}%
 \pgfpathlineto{\pgfqpoint{0.683366in}{2.358952in}}%
@@ -740,7 +747,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.127810in,y=2.619477in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont fit}%
+\pgftext[x=1.127810in,y=2.619477in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Fit}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -784,7 +791,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.127810in,y=2.415619in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont measurements}%
+\pgftext[x=1.127810in,y=2.415619in,left,base]{\color{textcolor}\sffamily\fontsize{10.000000}{12.000000}\selectfont Messwerte}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
